@@ -20,7 +20,7 @@ function createPost(postObj) {
     return new Promise((resolve, reject) => {
         setTimeout(function () {
             posts.push(postObj);
-            const error = true;
+            const error = false;
             if (!error) {
                 resolve();
             } else {
