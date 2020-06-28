@@ -16,12 +16,15 @@ function getPosts() {
     }, 1000);
 }
 
-function createPost(postObj) {
+// Call back TO the function we want to run AFTER
+function createPost(postObj, callback) {
     setTimeout(function () {
         posts.push(postObj);
-        console.log(posts);
+        // Placeholder for where you want the callback argument function to go.
+        // Order is important.
+        callback();
     }, 2000);
 }
 
-getPosts();
-createPost({ title: 'Post Three', body: 'This is post three' });
+//Reference the function we want to run after the function we're calling.
+createPost({ title: 'Post Three', body: 'This is post three' }, getPosts);
